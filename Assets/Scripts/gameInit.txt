@@ -1,0 +1,5 @@
+does it walk on four legs?
+does it bark?
+*is it a dog?
+does it slither?
+*is it a snake?
