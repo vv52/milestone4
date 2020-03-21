@@ -28,5 +28,27 @@ public class Tree
         return nodes;
     }
 
-    public 
+    public Node BuildTree(List<Node> contentNodes)
+    {
+    	_root = contentNodes[0];
+    	contentNodes.RemoveAt(0);
+
+    	_root->yes = BuildTreeRecursive(contentNodes, _root->yes);
+    	_root->no = BuildTreeRecursive(contentNodes, _root->no);
+    }
+
+    public Node BuildTreeRecursive(List<Node> contentNodes, Node parent)
+    {
+    	if(contentNodes[0].isLeaf)
+    	{
+    		// assign yes node to winstate
+    		// assign no node to call question prompt method
+    		// return -1? something to move back up a level
+       	}
+    	else
+    	{
+    		parent->yes = BuildTreeRecursive(contentNodes, parent->yes);
+    		parent->no = BuildTreeRecursive(contentNodes, parent->no);
+    	}
+    }
 }
