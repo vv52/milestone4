@@ -35,20 +35,32 @@ public class Tree
 
     	_root->yes = BuildTreeRecursive(contentNodes, _root->yes);
     	_root->no = BuildTreeRecursive(contentNodes, _root->no);
+
+    	return _root;
     }
 
-    public Node BuildTreeRecursive(List<Node> contentNodes, Node parent)
+    public Node BuildTreeRecursive(List<Node> contentNodes, Node current)
     {
+    	current = contentNodes[0];
+    	contentNodes.RemoveAt(0);
+
     	if(contentNodes[0].isLeaf)
     	{
-    		// assign yes node to winstate
-    		// assign no node to call question prompt method
-    		// return -1? something to move back up a level
+    		current->yes = new Node();
+    		current->yes.question = "I win! Try again...";
+
+    		current->no = new Node();
+    		current->no.question = "I lose... What is the answer?";
+
+    		// use isLeaf to call either Win(); or Prompt();
+    		// upon reaching this point from the game itself
        	}
     	else
     	{
-    		parent->yes = BuildTreeRecursive(contentNodes, parent->yes);
-    		parent->no = BuildTreeRecursive(contentNodes, parent->no);
+    		current->yes = BuildTreeRecursive(contentNodes, current->yes);
+    		current->no = BuildTreeRecursive(contentNodes, current->no);
     	}
+
+    	return current;
     }
 }
