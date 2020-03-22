@@ -7,11 +7,5 @@ public class Node
 	public Node yes { get; set; }
     public Node no { get; set; }
     public string question { get; set; }
-    public bool isLeaf
-    {
-    	get
-    	{
-    		return ((yes == null) && (no == null));
-    	}
-    }
+    public bool isLeaf { get; set; }
 }
