@@ -9,6 +9,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        questionTree = new QuestionTree();
         questionTree.SetupTree();
+    }
+
+    public string ReturnQuestion()
+    {
+        string temp;
+        temp = questionTree.ReturnContent();
+        return temp;
     }
 }

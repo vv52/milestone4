@@ -8,11 +8,12 @@ public class QuestionTree
 {
     Node _root;
     List<Node> questionData;
+    Node current;
 
     public List<Node> BuildList()
     {
     	List<Node> nodes = new List<Node>();
-    	string[] questions = System.IO.File.ReadAllLines("gameInit.txt");
+    	string[] questions = System.IO.File.ReadAllLines("Assets/gameInit.txt");
         foreach (var question in questions)
         {
             Node node = new Node();
@@ -44,7 +45,11 @@ public class QuestionTree
     	current = contentNodes[0];
     	contentNodes.RemoveAt(0);
 
-    	if(contentNodes[0].isLeaf)
+        if (contentNodes.Count < 1)
+        {
+            return current;
+        }
+        else if(contentNodes[0].isLeaf)
     	{
     		current.yes = new Node();
     		current.yes.question = "I win! Try again...";
@@ -69,5 +74,11 @@ public class QuestionTree
         questionData = new List<Node>();
         questionData = BuildList();
         BuildTree(questionData);
+        current = _root;
+    }
+
+    public string ReturnContent()
+    {
+        return current.question;
     }
 }
