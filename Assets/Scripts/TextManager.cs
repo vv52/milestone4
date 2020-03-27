@@ -12,4 +12,16 @@ public class TextManager : MonoBehaviour
 	{
     	QuestionText.text = Manager.ReturnQuestion();
 	}
+
+    public void UpdateYes()
+    {
+        Manager.Yes();
+        QuestionText.text = Manager.ReturnQuestion();
+    }
+
+    public void UpdateNo()
+    {
+        Manager.No();
+        QuestionText.text = Manager.ReturnQuestion();
+    }
 }

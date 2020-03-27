@@ -18,4 +18,14 @@ public class GameManager : MonoBehaviour
         temp = questionTree.ReturnContent();
         return temp;
     }
+
+    public void Yes()
+    {
+        questionTree.UpdateYes();
+    }
+
+    public void No()
+    {
+        questionTree.UpdateNo();
+    }
 }

@@ -81,4 +81,14 @@ public class QuestionTree
     {
         return current.question;
     }
+
+    public void UpdateYes()
+    {
+        current = current.yes;
+    }
+
+    public void UpdateNo()
+    {
+        current = current.no;
+    }
 }
