@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
 {
 	public QuestionTree questionTree;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         questionTree = new QuestionTree();
         questionTree.SetupTree();
