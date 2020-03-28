@@ -7,9 +7,9 @@ is it a reptile?
 *is it a lizard?
 *is it a pig?
 does it slither?
-does it swim?
-*is it a fish?
-*is it a snail?
 does it have a forked tongue?
 *is it a snake?
 *is it an eel?
+does it swim?
+*is it a fish?
+*is it a snail?
