@@ -49,7 +49,7 @@ public class QuestionTree
         {
             return current;
         }
-        else if(contentNodes[0].isLeaf)
+        else if(current.isLeaf)
     	{
     		current.yes = new Node();
     		current.yes.question = "I win! Try again...";
