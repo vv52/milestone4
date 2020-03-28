@@ -33,6 +33,22 @@ public class GameManager : MonoBehaviour
         questionTree.UpdateNo();
     }
 
+    public void RegAnimal()
+    {
+        newAnimal = userInput.text;
+    }
+
+    public void RegQuestion()
+    {
+        newQuestion = userInput.text;
+        AddNewAnimal();
+    }
+
+    public void AddNewAnimal()
+    {
+        
+    }
+
     // TODO: write new method to call QuestionTree's method
     //       that adds newAnimal and newQuestion to tree
 

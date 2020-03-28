@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 205727397}
   - component: {fileID: 205727396}
   - component: {fileID: 205727395}
+  - component: {fileID: 205727398}
   m_Layer: 0
   m_Name: Register Question
   m_TagString: Untagged
@@ -279,7 +280,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 205727398}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -326,6 +327,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205727393}
   m_CullTransparentMesh: 0
+--- !u!114 &205727398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205727393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af27d8e225e7fb14ca3bc8e4b71e6359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1091779848}
 --- !u!1 &225648683
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +506,7 @@ GameObject:
   - component: {fileID: 436712949}
   - component: {fileID: 436712948}
   - component: {fileID: 436712947}
+  - component: {fileID: 436712950}
   m_Layer: 0
   m_Name: Register Animal
   m_TagString: Untagged
@@ -562,7 +577,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 436712950}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -609,6 +624,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436712945}
   m_CullTransparentMesh: 0
+--- !u!114 &436712950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436712945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa43ebd3afa9c7448a97285cfdf51cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1091779848}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class RegisterQuestion : MonoBehaviour
 {
+	public GameManager gameManager;
+
+	public void OnClick()
+	{
+		gameManager.RegQuestion();
+	}
+
     // TODO: call GameManager to assign text box input
     //       to newQuestion, then call a new function
     //       in GameManager to call the function in 
