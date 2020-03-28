@@ -10,7 +10,6 @@ public class QuestionTree
     Node _root;
     List<Node> questionData;
     Node current;
-    public int endGame = 0;
 
     public List<Node> BuildList()
     {
@@ -58,8 +57,6 @@ public class QuestionTree
 
     		current.no = new Node();
     		current.no.question = "I lose... What is the answer?";
-
-    		endGame++;
        	}
     	else
     	{
@@ -92,4 +89,7 @@ public class QuestionTree
     {
         current = current.no;
     }
+
+    // TODO: write function that adds new animal name and question to tree
+    //       at end of function, call new function that writes tree to file
 }
