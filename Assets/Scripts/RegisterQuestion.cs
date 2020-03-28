@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class RegisterQuestion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // TODO: call GameManager to assign text box input
+    //       to newQuestion, then call a new function
+    //       in GameManager to call the function in 
+    //       QuestionTree that will add newAnimal and
+    //       newQuestion to the tree
 }

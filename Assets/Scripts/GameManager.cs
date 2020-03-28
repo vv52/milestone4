@@ -32,4 +32,8 @@ public class GameManager : MonoBehaviour
     {
         questionTree.UpdateNo();
     }
+
+    // TODO: write new method to call QuestionTree's method
+    //       that adds newAnimal and newQuestion to tree
+
 }
