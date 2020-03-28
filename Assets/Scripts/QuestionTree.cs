@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Text;
 
@@ -9,6 +10,7 @@ public class QuestionTree
     Node _root;
     List<Node> questionData;
     Node current;
+    public int endGame = 0;
 
     public List<Node> BuildList()
     {
@@ -57,8 +59,7 @@ public class QuestionTree
     		current.no = new Node();
     		current.no.question = "I lose... What is the answer?";
 
-    		// use isLeaf to call either Win(); or Prompt();
-    		// upon reaching this point from the game itself
+    		endGame++;
        	}
     	else
     	{
