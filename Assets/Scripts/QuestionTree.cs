@@ -95,6 +95,7 @@ public class QuestionTree
     public void AddAnimal(string animalName, string animalQuestion)
     {
         current.question = animalQuestion;
+        current.isLeaf = false;
         current.no = new Node();
         current.no.isLeaf = true;
         current.no.question = saveLeaf.question;
@@ -106,7 +107,37 @@ public class QuestionTree
     public void WriteToFile()
     {
         Debug.Log(current.question);
-        Debug.Log(current.no.question);
         Debug.Log(current.yes.question);
-    } 
+        Debug.Log(current.no.question);
+
+        string[] treeContent = RebuildArray();
+        System.IO.File.WriteAllLines("Assets/gameInitTEST.txt", treeContent);
+    }
+
+    public string[] RebuildArray()
+    {
+        List<string> updatedQuestions = new List<string>();
+        updatedQuestions.Add(_root.question);
+
+        RebuildArrayRecursive(updatedQuestions, _root.yes);
+        RebuildArrayRecursive(updatedQuestions, _root.no);
+
+        string[] treeContent = updatedQuestions.ToArray();
+        return treeContent;
+    }
+
+    public List<string> RebuildArrayRecursive(List<string> updatedQuestions, Node current)
+    {
+        if(current.isLeaf)
+        {
+            updatedQuestions.Add("*" + current.question);
+        }
+        else
+        {
+            updatedQuestions.Add(current.question);
+            RebuildArrayRecursive(updatedQuestions, current.yes);
+            RebuildArrayRecursive(updatedQuestions, current.no);
+        }
+        return updatedQuestions;
+    }
 }
