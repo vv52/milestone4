@@ -10,7 +10,7 @@ public class QuestionTree
     Node _root;
     List<Node> questionData;
     Node current;
-    Node saveLeaf;
+    string saveLeaf;
 
     public List<Node> BuildList()
     {
@@ -88,7 +88,7 @@ public class QuestionTree
 
     public void UpdateNo()
     {
-        saveLeaf = current;
+        saveLeaf = current.question;
         current = current.no;
     }
 
@@ -98,7 +98,7 @@ public class QuestionTree
         current.isLeaf = false;
         current.no = new Node();
         current.no.isLeaf = true;
-        current.no.question = saveLeaf.question;
+        current.no.question = saveLeaf;
         current.yes = new Node();
         current.yes.isLeaf = true;
         current.yes.question = "is it a " + animalName + "?";
