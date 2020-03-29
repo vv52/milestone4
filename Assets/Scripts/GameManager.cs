@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 	public QuestionTree questionTree;
     public InputField userInput;
+    public Text questionText;
     string newAnimal;
     string newQuestion;
 
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     public void RegAnimal()
     {
         newAnimal = userInput.text;
+        questionText.text = "what is a question I can ask to guess that animal?";
     }
 
     public void RegQuestion()
@@ -46,10 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void AddNewAnimal()
     {
-        
+        questionTree.AddAnimal(newAnimal, newQuestion);
+        questionTree.WriteToFile();
     }
-
-    // TODO: write new method to call QuestionTree's method
-    //       that adds newAnimal and newQuestion to tree
-
 }

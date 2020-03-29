@@ -10,6 +10,7 @@ public class QuestionTree
     Node _root;
     List<Node> questionData;
     Node current;
+    Node saveLeaf;
 
     public List<Node> BuildList()
     {
@@ -87,9 +88,25 @@ public class QuestionTree
 
     public void UpdateNo()
     {
+        saveLeaf = current;
         current = current.no;
     }
 
-    // TODO: write function that adds new animal name and question to tree
-    //       at end of function, call new function that writes tree to file
+    public void AddAnimal(string animalName, string animalQuestion)
+    {
+        current.question = animalQuestion;
+        current.no = new Node();
+        current.no.isLeaf = true;
+        current.no.question = saveLeaf.question;
+        current.yes = new Node();
+        current.yes.isLeaf = true;
+        current.yes.question = "is it a " + animalName + "?";
+    }
+
+    public void WriteToFile()
+    {
+        Debug.Log(current.question);
+        Debug.Log(current.no.question);
+        Debug.Log(current.yes.question);
+    } 
 }

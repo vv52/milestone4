@@ -10,7 +10,4 @@ public class RegisterAnimal : MonoBehaviour
 	{
 		gameManager.RegAnimal();
 	}
-
-    // TODO: call GameManager to assign text box input
-    //       to newAnimal
 }
