@@ -49,6 +49,5 @@ public class GameManager : MonoBehaviour
     public void AddNewAnimal()
     {
         questionTree.AddAnimal(newAnimal, newQuestion);
-        questionTree.WriteToFile();
     }
 }

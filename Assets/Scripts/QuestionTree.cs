@@ -9,6 +9,7 @@ public class QuestionTree
 {
     Node _root;
     List<Node> questionData;
+    List<string> questionDataBackup = new List<string>();
     Node current;
     string saveLeaf;
 
@@ -20,6 +21,7 @@ public class QuestionTree
         {
             Node node = new Node();
             node.question = question;
+            questionDataBackup.Add(question);
 
             if(question.Length > 0 && question[0] == '*')
             {
@@ -94,50 +96,18 @@ public class QuestionTree
 
     public void AddAnimal(string animalName, string animalQuestion)
     {
-        current.question = animalQuestion;
-        current.isLeaf = false;
-        current.no = new Node();
-        current.no.isLeaf = true;
-        current.no.question = saveLeaf;
-        current.yes = new Node();
-        current.yes.isLeaf = true;
-        current.yes.question = "is it a " + animalName + "?";
-    }
-
-    public void WriteToFile()
-    {
-        Debug.Log(current.question);
-        Debug.Log(current.yes.question);
-        Debug.Log(current.no.question);
-
-        string[] treeContent = RebuildArray();
-        System.IO.File.WriteAllLines("Assets/gameInitTEST.txt", treeContent);
-    }
-
-    public string[] RebuildArray()
-    {
-        List<string> updatedQuestions = new List<string>();
-        updatedQuestions.Add(_root.question);
-
-        RebuildArrayRecursive(updatedQuestions, _root.yes);
-        RebuildArrayRecursive(updatedQuestions, _root.no);
-
-        string[] treeContent = updatedQuestions.ToArray();
-        return treeContent;
-    }
-
-    public List<string> RebuildArrayRecursive(List<string> updatedQuestions, Node current)
-    {
-        if(current.isLeaf)
+        int i = 0;
+        while (questionDataBackup[i] != ("*" + saveLeaf) && i < questionDataBackup.Count)
         {
-            updatedQuestions.Add("*" + current.question);
+            i++;
         }
-        else
-        {
-            updatedQuestions.Add(current.question);
-            RebuildArrayRecursive(updatedQuestions, current.yes);
-            RebuildArrayRecursive(updatedQuestions, current.no);
-        }
-        return updatedQuestions;
+
+        questionDataBackup.Insert(i, animalQuestion);
+        string newLeafTemp = "*is it a " + animalName + "?";
+        questionDataBackup.Insert(i + 1, newLeafTemp);
+
+        string[] newQuestionData = questionDataBackup.ToArray();
+
+        System.IO.File.WriteAllLines("Assets/gameInit.txt", newQuestionData);
     }
 }

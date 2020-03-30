@@ -1444,7 +1444,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Guessing Game v0.2
+  m_Text: Guessing Game v0.3
 --- !u!222 &1772290088
 CanvasRenderer:
   m_ObjectHideFlags: 0

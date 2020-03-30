@@ -2,6 +2,8 @@ does it walk on four legs?
 does it have fur?
 does it bark?
 *is it a dog?
+does it purr?
+*is it a cat?
 *is it a wolf?
 is it a reptile?
 *is it a lizard?
